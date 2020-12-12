@@ -1,11 +1,15 @@
-const http = require('http');
+const express = require('express');
+const { DataTypes } = require('sequelize');
+const app = express()
+const sequelize = require('./db').sequelize
+const User = require('./models/user')(sequelize, DataTypes)
+const port = process.env.PORT || 8080;
 
-let port = process.env.PORT || 8080;
+app.get('/', async (_, res) => {
+  const users = await User.findAll();
+  res.send(users)
+})
 
-const requestListener = function (req, res) {
-  res.writeHead(200);
-  res.end('Hello, World!');
-}
-
-const server = http.createServer(requestListener);
-server.listen(port);
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
