@@ -1,5 +1,10 @@
 # nodejs-demo-app
 
+Showing how to deploy a NodeJs App using different deployment methods or
+services. For example Heroku
+
+## Heroku
+
 https://devcenter.heroku.com
 
 https://devcenter.heroku.com/categories/nodejs-support
