@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
-    "start": "npm run migrate && npm run seed && node server.js"
+    "start": "npm run migrate && npm run seed && node server.js",
+    "start:simple": "node simple-server.js"
   },
   "keywords": [],
   "author": "",
